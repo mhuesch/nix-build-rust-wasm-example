@@ -30,7 +30,7 @@
 
       in
 
-      {
+      rec {
         devShell = pkgs.mkShell {
           buildInputs = [
             (pkgs.rust-bin.stable.${rustVersion}.default.override {
@@ -92,5 +92,34 @@
           in
 
           wasm;
+
+        packages.toplevel =
+          let
+
+            js-main = pkgs.writeTextFile {
+              name = "main.js";
+              text = ''
+                import init, { run_app } from './app.js';
+                async function main() {
+                   await init('nix_build_rust_wasm_example.wasm');
+                   run_app();
+                }
+                main()
+              '';
+            };
+
+          in
+
+          pkgs.stdenv.mkDerivation {
+            name = "nix-build-rust-wasm-example";
+            unpackPhase = "true";
+            installPhase = ''
+              mkdir $out
+              cp ${./index.html} $out/index.html
+              cp ${./app.js} $out/app.js
+              cp ${packages.rust-wasm_naersk}/lib/nix_build_rust_wasm_example.wasm $out
+              cp ${js-main} $out/main.js
+            '';
+          };
       });
 }
