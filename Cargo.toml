@@ -1,0 +1,14 @@
+[package]
+name = "nix-build-rust-wasm-example"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+gloo-console = "0.2"
+# use latest Yew, to have new `Context`s
+yew = { git = "https://github.com/yewstack/yew.git", rev = "996bf5b41ac30d7ada14fdc2f419de7659e94613" }
+wasm-bindgen = "0.2"
