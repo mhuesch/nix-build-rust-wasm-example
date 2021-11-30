@@ -112,6 +112,7 @@
 
           pkgs.stdenv.mkDerivation {
             name = "nix-build-rust-wasm-example";
+            buildInputs = [ pkgs.nodePackages.rollup ];
             unpackPhase = "true";
             installPhase = ''
               mkdir $out
@@ -119,6 +120,7 @@
               cp ${./app.js} $out/app.js
               cp ${packages.rust-wasm_naersk}/lib/nix_build_rust_wasm_example.wasm $out
               cp ${js-main} $out/main.js
+              rollup $out/main.js --format iife --file $out/bundle.js
             '';
           };
       });
