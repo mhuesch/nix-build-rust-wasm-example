@@ -86,7 +86,6 @@
               src = ./.;
               copyLibs = true;
               CARGO_BUILD_TARGET = wasmTarget;
-              cargoBuildOptions = (opts: opts ++ ["--package=nix-build-rust-wasm-example"]);
             };
 
           in
