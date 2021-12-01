@@ -7,15 +7,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1638191629,
-        "narHash": "sha256-1o5zjHJHKtBFXU06I3/z92yAj8QLa3qycCGtcvjvI8o=",
+        "lastModified": 1638245135,
+        "narHash": "sha256-Th9YT2qjNwT8SplpHlMYCzRKOwtJG1iEN6taI2kZNEE=",
         "owner": "cargo2nix",
         "repo": "cargo2nix",
-        "rev": "51f81fa79247c5e94f8aa8007ac2a4d1760a7ee1",
+        "rev": "7eb1a16803681193ef2fedd2ac944e13fff8c562",
         "type": "github"
       },
       "original": {
         "owner": "cargo2nix",
+        "ref": "no-profile-for-wasm",
         "repo": "cargo2nix",
         "type": "github"
       }

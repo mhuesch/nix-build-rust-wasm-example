@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     rust-overlay.url = "github:oxalica/rust-overlay";
-    cargo2nix.url = "github:cargo2nix/cargo2nix";
+    cargo2nix.url = "github:cargo2nix/cargo2nix/no-profile-for-wasm";
     naersk.url = "github:nix-community/naersk";
     flake-compat = {
       url = "github:edolstra/flake-compat";
