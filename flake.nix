@@ -63,7 +63,7 @@
             rustPkgs = crossPkgs.rustBuilder.makePackageSet' {
               rustChannel = rustVersion;
               packageFun = import ./Cargo.nix;
-              target = "wasm32-unknown-unknown";
+              target = wasmTarget;
             };
 
           in
